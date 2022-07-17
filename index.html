@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aquamarine;
+            display: flex;
+        }
+
+        .container {
+            margin: 3rem auto;
+            width: 23%;
+            height: 32rem;
+            background-color: black;
+            border: 2px solid black;
+            border-radius: 15px;
+            min-width: 20rem;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 'displaybox displaybox displaybox displaybox'
+                'num_delete_all num_history num_delete num_divide'
+                'num7 num8 num9 num_multiply'
+                'num4 num5 num6 num_minus'
+                'num1 num2 num3 num_plus'
+                'num00 num0 num_dot num_equal';
+        }
+
+        .btn {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            border-radius: 0.9rem;
+        }
+
+        #num1 {
+            display: flex;
+            margin: auto;
+            grid-area: num1;
+        }
+
+        #num2 {
+            grid-area: num2;
+            display: flex;
+            margin: auto;
+        }
+
+        #num3 {
+            grid-area: num3;
+            display: flex;
+            margin: auto;
+        }
+
+        #num4 {
+            grid-area: num4;
+            display: flex;
+            margin: auto;
+        }
+
+        #num5 {
+            grid-area: num5;
+            display: flex;
+            margin: auto;
+        }
+
+        #num6 {
+            grid-area: num6;
+            display: flex;
+            margin: auto;
+        }
+
+        #num7 {
+            grid-area: num7;
+            display: flex;
+            margin: auto;
+        }
+
+        #num8 {
+            grid-area: num8;
+            display: flex;
+            margin: auto;
+        }
+
+        #num9 {
+            grid-area: num9;
+            display: flex;
+            margin: auto;
+        }
+
+        #num_delete_all {
+            grid-area: num_delete_all;
+            display: flex;
+            margin: auto;
+        }
+
+        #num_history {
+            grid-area: num_history;
+            display: flex;
+            margin: auto;
+        }
+
+        #num_delete {
+            grid-area: num_delete;
+            display: flex;
+            margin: auto;
+        }
+
+        #num_divide {
+            grid-area: num_divide;
+            display: flex;
+            margin: auto;
+            color: rgb(15, 97, 97);
+        }
+
+        #num_multiply {
+            grid-area: num_multiply;
+            display: flex;
+            margin: auto;
+            color: rgb(15, 97, 97);
+        }
+
+        #num_minus {
+            grid-area: num_minus;
+            display: flex;
+            margin: auto;
+            color: rgb(15, 97, 97);
+        }
+
+        #num_plus {
+            grid-area: num_plus;
+            display: flex;
+            margin: auto;
+            color: rgb(15, 97, 97);
+        }
+
+        #num_equal {
+            grid-area: num_equal;
+            display: flex;
+            margin: auto;
+            color: rgb(15, 97, 97);
+        }
+
+        #num00 {
+            grid-area: num00;
+            display: flex;
+            margin: auto;
+        }
+
+        #num0 {
+            grid-area: num0;
+            display: flex;
+            margin: auto;
+        }
+
+        #num_dot {
+            grid-area: num_dot;
+            display: flex;
+            margin: auto;
+        }
+
+        #displaybox {
+            grid-area: displaybox;
+            color: white;
+            /* border: 2px solid red; */
+            /* display: flex; */
+            flex-direction: row-reverse;
+            font-size: 3rem;
+            width: 4rem;
+            height: 3rem;
+        }
+
+        h2 {
+            padding: 2px;
+            margin: 2px;
+        }
+
+        input {
+            margin: 3rem;
+
+        }
+
+        input {
+            margin: 0rem -0.2rem;
+            width: 19.8rem;
+            background-color: transparent;
+            border-radius: 13px;
+            color: white;
+            height: 5rem;
+            margin-top: 0rem;
+            font-size: 3rem;
+        }
+        .glow:hover{
+            background-color: rgb(111, 163, 146);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="displaybox">
+            <input class="input" type="text/">
+        </div>
+        <button class="btn glow" id="num1">1</button>
+        <button class="btn glow" id="num2">2</button>
+        <button class="btn glow" id="num3">3</button>
+        <button class="btn glow" id="num4">4</button>
+        <button class="btn glow" id="num5">5</button>
+        <button class="btn glow" id="num6">6</button>
+        <button class="btn glow" id="num7">7</button>
+        <button class="btn glow" id="num8">8</button>
+        <button class="btn glow" id="num9">9</button>
+        <button class="btn glow" id="num0">0</button>
+        <button class="btn glow" id="num00">00</button>
+        <button class="btn glow" id="num_dot">.</button>
+        <button class="btn glow" id="num_delete_all">C</button>
+        <!-- <button class="btn" id="num_delete">CE</button> -->
+        <button class="btn glow" id="num_delete"><i class="material-icons"><span class="material-symbols-outlined">backspace</span></i></button>
+        <button class="btn glow" id="num_history">%</button>
+        <button class="btn glow" id="num_divide">/</button>
+        <button class="btn glow" id="num_multiply">*</button>
+        <button class="btn glow" id="num_minus">-</button>
+        <button class="btn glow" id="num_plus">+</button>
+        <button class="btn glow" id="num_equal">=</button>
+    </div>
+</body>
+<script>
+    // let string = "";
+    // let btn = document.querySelectorAll('.btn');
+    // Array.from(btn).forEach((button) => {
+    //     button.addEventListener('click', (e) => {
+    //         if (e.target.innerHTML == '=') {
+    //             string = eval(string);
+    //             document.querySelector('input').value = string;
+    //         }
+    //         else if (e.target.innerHTML == 'C') {
+    //             string = "";
+    //             document.querySelector('input').value = string;
+    //         }
+    //         else if (e.target.innerHTML == 'num_delete') {
+    //             let str =string.slice(0 ,string.length -1);
+    //            displaybox.innerTEXT = str;
+    //         }
+    //         else if (e.target.innerHTML == '%') {
+    //             let a = string;
+    //             let b = a / 100;
+    //             document.querySelector('input').value = b;
+    //         }
+    //         else {
+    //             console.log(e.target)
+    //             string = string + e.target.innerHTML;
+    //             document.querySelector('input').value = string;
+    //         }
+    //     })
+    // })
+    function handler(event) {
+        const value = event.target.innerText
+        const displaybox = document.getElementById("displaybox")
+        switch (value) {
+            case "C":
+                displaybox.innerText = ""
+                break
+
+            case "backspace":
+                displaybox.innerText = displaybox.innerText.slice(0, -1)
+                break
+
+            case "=":
+                displaybox.innerText = eval(displaybox.innerText)
+                break
+
+            case "%":
+                let a =displaybox.innerText
+                let b = a/100
+                displaybox.innerText = b
+            break
+
+            default:
+                displaybox.innerText += value
+        }
+    }
+
+    Array
+        .from(
+            document.getElementsByClassName('btn')
+        )
+        .forEach(
+            (button) => {
+                button.addEventListener("click", handler)
+            }
+        )
+</script>
+
+</html>
